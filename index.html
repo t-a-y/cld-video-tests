@@ -37,8 +37,19 @@
   <div class="container p-4 col-12 col-md-9 col-xl-6">
     <h1 class="mb-4">Cloudinary Video Player - More Tests</h1>
 
-    <video id="player" controls muted class="cld-video-player cld-video-player-skin-dark cld-fluid"
-      data-cld-source='{ "publicId": "sea_turtle", "info": { "title": "Sea turtle", "subtitle": "Short movie about a sea turtle" } }'></video>
+    <video
+      id="player"
+      controls
+      muted
+      class="cld-video-player cld-video-player-skin-dark cld-fluid"
+      data-cld-source='{
+        "publicId": "sea_turtle",
+        "info": {
+          "title": "Sea turtle",
+          "subtitle": "Short movie about a sea turtle"
+        }
+      }'
+    ></video>
 
     <p class="mt-4">
       <a href="https://cloudinary.com/documentation/cloudinary_video_player">Full documentation @
@@ -48,13 +59,27 @@
     <h3 class="mt-4">Tests:</h3>
     <ul>
       <li><a href="./streaming-profiles.html">Advanced Streaming Profiles</a></li>
+      <li><a href="./animal-crossing.html">animal-crossing.com</a></li>
+    </ul>
+
+    <h3 class="mt-4">How to add tests:</h3>
+    <ul>
+      <li>Open original video page</li>
+      <li>Breakpoint at the <code>extractOptions</code> function</li>
+      <li>Log <code>JSON.stringify(options, null, 2)</code></li>
+      <li>Copy <code>_template.html</code></li>
+      <li>Pass the options to <code>cld.videoPlayer("player", options)</code></li>
     </ul>
 
   </div>
 
   <!-- Bootstrap -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
 </body>
 
 </html>

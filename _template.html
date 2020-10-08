@@ -25,7 +25,13 @@
 
       var cld = cloudinary.Cloudinary.new({ cloud_name: 'demo' });
 
-      player = cld.videoPlayer('player');
+      var opts = {
+        "source": {
+          "publicId": "/Legacy Videos/JsMTI1ajE6uoTZ1HDal75E0uiSN9PSgj"
+        }
+      }
+
+      var player = cld.videoPlayer("player", opts)
 
     }, false);
   </script>
