@@ -23,9 +23,13 @@
   <script type="text/javascript">
     window.addEventListener('load', function () {
 
-      var cld = cloudinary.Cloudinary.new({ cloud_name: 'demo' });
+      var cld = cloudinary.Cloudinary.new({
+        // JSON.stringify(options.cloudinaryConfig.config(), null, 2)
+        "cloud_name": "demo"
+      });
 
       var opts = {
+        // JSON.stringify(options, null, 2)
         "source": {
           "publicId": "/Legacy Videos/JsMTI1ajE6uoTZ1HDal75E0uiSN9PSgj"
         }
@@ -55,6 +59,9 @@
       class="cld-video-player cld-fluid"
     ></video>
 
+    <p>
+      <a href="https://example.com/">source</a>
+    </p>
   </div>
 
   <!-- Bootstrap -->

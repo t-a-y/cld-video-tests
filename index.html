@@ -43,11 +43,7 @@
       muted
       class="cld-video-player cld-video-player-skin-dark cld-fluid"
       data-cld-source='{
-        "publicId": "sea_turtle",
-        "info": {
-          "title": "Sea turtle",
-          "subtitle": "Short movie about a sea turtle"
-        }
+        "publicId": "dog"
       }'
     ></video>
 
@@ -58,15 +54,20 @@
 
     <h3 class="mt-4">Tests:</h3>
     <ul>
-      <li><a href="./streaming-profiles.html">Advanced Streaming Profiles</a></li>
-      <li><a href="./animal-crossing.html">animal-crossing.com</a></li>
+      <li><a href="./streaming-profiles.html">NOA - Advanced Streaming Profiles</a></li>
+      <li><a href="./animal-crossing.html">NOA - Animal Crossing</a></li>
+      <li><a href="./clubhouse-games.html">NOA - Clubhouse Games</a></li>
+      <li><a href="./fortnite-switch.html">NOA - Fortnite Switch</a></li>
     </ul>
 
-    <h3 class="mt-4">How to add tests:</h3>
+    <br>
+    <hr>
+    <h5 class="mt-4">How to add tests:</h5>
     <ul>
       <li>Open original video page</li>
       <li>Breakpoint at the <code>extractOptions</code> function</li>
-      <li>Log <code>JSON.stringify(options, null, 2)</code></li>
+      <li>Log cloud config <code>JSON.stringify(options.cloudinaryConfig.config(), null, 2)</code></li>
+      <li>Log source config <code>JSON.stringify(options, null, 2)</code></li>
       <li>Copy <code>_template.html</code></li>
       <li>Pass the options to <code>cld.videoPlayer("player", options)</code></li>
     </ul>
