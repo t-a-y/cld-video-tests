@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cloudinary Video Player - More Tests</title>
+  <link href="https://cloudinary-res.cloudinary.com/image/asset/favicon-32x32-2991a47c2caa80211bf2dbf3f29317c8.png"
+    rel="icon" sizes="32x32" type="image/png" />
+
+  <!--
+    We're loading scripts & style dynamically for development/testing.
+    Real-world usage would look like this:
+
+    <link rel="stylesheet" href="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css">
+
+    <script src="https://unpkg.com/cloudinary-core/cloudinary-core-shrinkwrap.js"></script>
+    <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
+
+  -->
+
+  <script type="text/javascript" src="./scripts.js"></script>
+
+  <script type="text/javascript">
+    window.addEventListener(
+      "load",
+      function () {
+        var cld = cloudinary.Cloudinary.new({
+          cloud_name: "ncom",
+          private_cdn: true,
+          secure: true,
+          secure_distribution: "assets.nintendo.com"
+        })
+        var m = {
+          //publicId: "Nintendo Direct/2020/03-26-2020/main-01",
+          publicId:
+            "Microsites/clubhouse-games-51-worldwide-classics/Switch_CG51WC_OverviewVideoNOA-PostRelease",
+          sourceTypes: ["dash/vp9"],
+          sourceTransformation: {
+            "dash/vp9": [
+              {
+                streaming_profile: "vp9_full_hd"
+              }
+            ],
+            "hls/h265": [
+              {
+                streaming_profile: "h265_full_hd"
+              }
+            ],
+            "hls/h264": [
+              {
+                streaming_profile: "full_hd"
+              }
+            ]
+          }
+        }
+        var player = cld.videoPlayer("player")
+        player.source(m)
+      },
+      false
+    )
+  </script>
+</head>
+
+<body>
+  <div class="container p-4 col-12 col-md-9 col-xl-6">
+    <nav class="nav mb-2">
+      <a href="./index.html">&#60;&#60; Back to examples index</a>
+    </nav>
+
+    <h1>Cloudinary Video Player - More Tests</h1>
+    <h3 class="mb-4">Advanced Streaming Profiles</h3>
+
+    <video
+      id="player"
+      playsinline
+      controls
+      muted
+      autoplay
+      class="cld-video-player cld-fluid"
+    ></video>
+
+  </div>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+</body>
+
+</html>
