@@ -1,0 +1,14 @@
+{
+  "name": "cloudinary-video-tests",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "git@github.com:t-a-y/cld-video-tests.git",
+  "author": "TAY",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "scripts": {
+    "start": "live-server"
+  }
+}
